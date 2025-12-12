@@ -32,7 +32,7 @@ Security Relevance:: This function could serve as a basis for a security tool th
 --------------------------------------------------------------------------------
 
 
-2) Capture Window into HBITMAP: CaptureWindow (I love messing around with windows at a low level :D)
+2) Capture Window into HBITMAP: CaptureWindow 
 --------------------------------------------------------------------------------
 HBITMAP CaptureWindow(HWND hwnd)
 {
@@ -63,7 +63,7 @@ Screen Capturing: Capturing the contents of a window is a form of surveillance. 
 
 
 3) Convert HBITMAP to Leptonica PIX: PixFromHBitmap
-
+--------------------------------------------------------------------------------
 PIX* PixFromHBitmap(HBITMAP hBitmap)
 {
     // Convert HBITMAP to Leptonica PIX format
@@ -80,7 +80,7 @@ Security Relevance: Image Processing for OCR: The ability to process images into
 
 
 4) Perform OCR and Detect Keywords: DoOCRAndDetectKeywords
-
+--------------------------------------------------------------------------------
 bool DoOCRAndDetectKeywords(PIX* pix, const std::vector<std::string>& keywords)
 {
     // Use Tesseract to perform OCR and check for keywords
@@ -96,7 +96,7 @@ Security Relevance: Keyword Matching: The function looks for specific keywords w
 --------------------------------------------------------------------------------
 
 5) Continuous Monitoring Loop: ContinuousMonitor
-
+--------------------------------------------------------------------------------
 void ContinuousMonitor(HWND hwnd, const std::vector<std::string>& keywords, int intervalMs = 500)
 {
     // Loop to continuously capture window and perform OCR at regular intervals
@@ -111,7 +111,7 @@ Security Relevance: Real-Time Surveillance: The ability to continuously monitor 
 --------------------------------------------------------------------------------
 
 6) Main Entry Point: main
-
+--------------------------------------------------------------------------------
 int main()
 {
     HWND hwnd = GetForegroundWindow();
