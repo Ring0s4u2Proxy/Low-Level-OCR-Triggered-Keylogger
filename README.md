@@ -3,13 +3,13 @@ In order to prevent script kiddies from copying and pasting this and then gettin
 Another thing I would like to mention is that with the right knowledge, it is possible to create a timer that activates when the "Function Triggered When A Keyword is Detected" is activated; this timer would hypothetically stop the looping/screenshot function of the program for a set amount of time until the "Function Triggered When A Keyword is Detected" function is deactivated when the timer reaches 0. 
 
 Also, it should be theoretically possible to create a function using these techniques that cuts off network communication when a keyword like "Network Monitor" is analyzed. It is also theoretically possible to create a function that moves this program to a new location and renames it when the name of the name of this program is analyzed by the OCR. 
-
+--------------------------------------------------------------------------------
 Something to keep in mind about this program: 
 -No Disk I/O: Throughout the program’s operation, the only storage that is used is temporary memory (RAM), and there are no filesystem operations (e.g., no saving images, OCR results, or logs to disk).
 -Temporary Data: All data (images, OCR text, keywords) is stored in memory during the execution of the program. Once the program ends, everything is discarded unless explicitly saved to disk.
 -Security Implication: This in-memory operation could be seen as a security feature, as there is no persistence of sensitive information (like screenshots or OCR results) on disk. However, if malicious actors gain control of the running process, they could still access the in-memory data, which could include sensitive content depending on the keywords being monitored.
 
-
+--------------------------------------------------------------------------------
 
 1) Function Triggered When a Keyword is Detected: OnKeywordDetected
 void OnKeywordDetected(const std::string& keyword, const std::string& ocrText)
@@ -24,13 +24,15 @@ void OnKeywordDetected(const std::string& keyword, const std::string& ocrText)
     // ...
 }
 
+
+
 Breakdown:
 This function is invoked when a keyword is found in the OCR-processed text. It prints the detected keyword along with the full OCR text from the current screen capture. The intention is to perform some automated task when a specific keyword appears on screen.
 Security Relevance:
 
 Security Relevance:: This function could serve as a basis for a security tool that watches for sensitive keywords (e.g., "password", "confidential", "login", "access granted") within applications. Whenever such terms appear, it could trigger alerts, log the occurrence, or even execute remediation steps (e.g., disable access).
 
-
+--------------------------------------------------------------------------------
 
 
 2) Capture Window into HBITMAP: CaptureWindow (I love messing around with windows at a low level :D)
