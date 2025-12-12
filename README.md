@@ -12,6 +12,7 @@ Something to keep in mind about this program:
 --------------------------------------------------------------------------------
 
 1) Function Triggered When a Keyword is Detected: OnKeywordDetected
+
 void OnKeywordDetected(const std::string& keyword, const std::string& ocrText)
 {
     std::cout << "\n===========================================\n";
