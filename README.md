@@ -12,7 +12,7 @@ Something to keep in mind about this program:
 --------------------------------------------------------------------------------
 
 1) Function Triggered When a Keyword is Detected: OnKeywordDetected
-
+--------------------------------------------------------------------------------
 void OnKeywordDetected(const std::string& keyword, const std::string& ocrText)
 {
     std::cout << "example";
@@ -33,7 +33,7 @@ Security Relevance:: This function could serve as a basis for a security tool th
 
 
 2) Capture Window into HBITMAP: CaptureWindow (I love messing around with windows at a low level :D)
-
+--------------------------------------------------------------------------------
 HBITMAP CaptureWindow(HWND hwnd)
 {
     RECT rc;
