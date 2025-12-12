@@ -1,7 +1,7 @@
 In order to prevent script kiddies from copying and pasting this and then getting a cutting-edge keylogger, I have taken out the actual keylogger code and any sort of obfuscation, process injection, and basically anything that makes it malicious. I think it is pretty easy to read in-between the lines regarding how to make this silent and how it could be used for abuse. 
-
+--------------------------------------------------------------------------------
 Another thing I would like to mention is that with the right knowledge, it is possible to create a timer that activates when the "Function Triggered When A Keyword is Detected" is activated; this timer would hypothetically stop the looping/screenshot function of the program for a set amount of time until the "Function Triggered When A Keyword is Detected" function is deactivated when the timer reaches 0. 
-
+--------------------------------------------------------------------------------
 Also, it should be theoretically possible to create a function using these techniques that cuts off network communication when a keyword like "Network Monitor" is analyzed. It is also theoretically possible to create a function that moves this program to a new location and renames it when the name of the name of this program is analyzed by the OCR. 
 --------------------------------------------------------------------------------
 Something to keep in mind about this program: 
@@ -61,7 +61,7 @@ This function captures the contents of a window specified by hwnd (a handle to t
 Security Relevance:
 Screen Capturing: Capturing the contents of a window is a form of surveillance. In a cybersecurity context, this technique could be used to monitor application windows for sensitive data such as passwords, private keys, or proprietary information displayed in software applications.
 
-
+--------------------------------------------------------------------------------
 
 
 3) Convert HBITMAP to Leptonica PIX: PixFromHBitmap
@@ -77,7 +77,7 @@ This function converts the captured HBITMAP into a Leptonica PIX structure, whic
 Security Relevance: Image Processing for OCR: The ability to process images into a format that Tesseract can use allows for automated text recognition. In the context of cybersecurity, this could be used to scan images for sensitive information that may not be easily accessible via traditional text-based methods. For example, it might be used to scan screenshots or images taken from potentially suspicious applications or websites.
 
 
-
+--------------------------------------------------------------------------------
 
 
 4) Perform OCR and Detect Keywords: DoOCRAndDetectKeywords
@@ -93,7 +93,7 @@ This function initializes Tesseract OCR and performs optical character recogniti
 Security Relevance: Keyword Matching: The function looks for specific keywords within the OCR text, which is crucial for cybersecurity tasks such as monitoring for specific commands, sensitive terms, or unauthorized access indicators.
 
 
-
+--------------------------------------------------------------------------------
 
 5) Continuous Monitoring Loop: ContinuousMonitor
 void ContinuousMonitor(HWND hwnd, const std::vector<std::string>& keywords, int intervalMs = 500)
@@ -107,7 +107,7 @@ This function initiates a continuous monitoring loop, which repeatedly captures 
 
 Security Relevance: Real-Time Surveillance: The ability to continuously monitor a window for specific keywords is a hallmark of real-time surveillance tools. In cybersecurity, this could be used to track suspicious activity, monitor communications for sensitive data leaks, or automate alerts when certain terms are mentioned. This technique can be useful in detecting cyberattacks that occur in a windowed environment, such as phishing attempts, unauthorized access, or the use of malicious software.
 
-
+--------------------------------------------------------------------------------
 
 6) Main Entry Point: main
 int main()
@@ -136,17 +136,9 @@ int main()
 Breakdown:
 The main function initializes the program by capturing the current foreground window and continuously monitors it for the presence of predefined keywords. If any keyword is detected, the OnKeywordDetected function is called. 
 
-Security Relevance: User Behavior Monitoring: This functionality could be used to monitor user behavior within applications. It could potentially be repurposed to watch for dangerous commands or interactions within a program (for instance, in banking apps or email clients) that could lead to security breaches.
+Security Relevance: User Behavior Monitoring: This functionality could be used to monitor user behavior within applications. It could potentially be repurposed to watch for dangerous commands or interactions within a program (for instance, in banking apps or email clients) that could lead to security breaches. If exploited by an attacker, this code could be used to monitor and capture sensitive information from applications without the user’s knowledge. For example, it could be modified to look for usernames, passwords, or specific system messages. On the flip side, this technology can be harnessed for positive use cases like monitoring system logs or detecting suspicious behavior in real-time within corporate environments.
 
-
-
-
-Potential Security Implications
-Malicious Usage: If exploited by an attacker, this code could be used to monitor and capture sensitive information from applications without the user’s knowledge. For example, it could be modified to look for usernames, passwords, or specific system messages.
-
-Security Relevance: On the flip side, this technology can be harnessed for positive use cases like monitoring system logs or detecting suspicious behavior in real-time within corporate environments.
-
-
+--------------------------------------------------------------------------------
 
 
 Alright, I hope you found this informative. Sorry about not including any malicious code; I do not want to aid in any sort of fraud or something like that. Nonetheless, this is still an interesting technique, and I think the principles behind the technique could be used for something good. 
