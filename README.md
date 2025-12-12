@@ -1,8 +1,10 @@
 In order to prevent script kiddies from copying and pasting this and then getting a cutting-edge keylogger, I have taken out the actual keylogger code and any sort of obfuscation, process injection, and basically anything that makes it malicious. I think it is pretty easy to read in-between the lines regarding how to make this silent and how it could be used for abuse. 
 --------------------------------------------------------------------------------
 Another thing I would like to mention is that with the right knowledge, it is possible to create a timer that activates when the "Function Triggered When A Keyword is Detected" is activated; this timer would hypothetically stop the looping/screenshot function of the program for a set amount of time until the "Function Triggered When A Keyword is Detected" function is deactivated when the timer reaches 0. 
+
 --------------------------------------------------------------------------------
 Also, it should be theoretically possible to create a function using these techniques that cuts off network communication when a keyword like "Network Monitor" is analyzed. It is also theoretically possible to create a function that moves this program to a new location and renames it when the name of the name of this program is analyzed by the OCR. 
+
 --------------------------------------------------------------------------------
 Something to keep in mind about this program: 
 
