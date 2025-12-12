@@ -5,8 +5,11 @@ Another thing I would like to mention is that with the right knowledge, it is po
 Also, it should be theoretically possible to create a function using these techniques that cuts off network communication when a keyword like "Network Monitor" is analyzed. It is also theoretically possible to create a function that moves this program to a new location and renames it when the name of the name of this program is analyzed by the OCR. 
 --------------------------------------------------------------------------------
 Something to keep in mind about this program: 
+
 -No Disk I/O: Throughout the program’s operation, the only storage that is used is temporary memory (RAM), and there are no filesystem operations (e.g., no saving images, OCR results, or logs to disk).
+
 -Temporary Data: All data (images, OCR text, keywords) is stored in memory during the execution of the program. Once the program ends, everything is discarded unless explicitly saved to disk.
+
 -Security Implication: This in-memory operation could be seen as a security feature, as there is no persistence of sensitive information (like screenshots or OCR results) on disk. However, if malicious actors gain control of the running process, they could still access the in-memory data, which could include sensitive content depending on the keywords being monitored.
 
 --------------------------------------------------------------------------------
