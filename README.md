@@ -150,4 +150,4 @@ Security Relevance: User Behavior Monitoring: This functionality could be used t
 --------------------------------------------------------------------------------
 
 
-Alright, I hope you found this informative. Sorry about not including any malicious code; I do not want to aid in any sort of fraud or something like that. Nonetheless, this is still an interesting technique, and I think the principles behind the technique could be used for something good. 
+I think this tool has the potential to shave off many, many hours of red teaming operation. Anyways, I hope you found this informative. Sorry about not including any malicious code; I do not want to aid in any sort of fraud or something like that. Nonetheless, this is still an interesting technique, and I think the principles behind the technique could be used for something good. I 
