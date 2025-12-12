@@ -1,6 +1,8 @@
-In order to prevent script kiddies from copying and pasting this, and then getting a cutting edge keylogger, I have taken out the actual keylogger section, and any sort of obfuscation, or process injection. I think it is pretty easy to read-inbetween the lines regarding how to make this silent and how it could be used for abuse. Also, with the right knowledge it is possible to create a timer that activates when the, "Function Triggered When A Keyword is Detected," is activated, this timer would hypothetically stop the looping/screenshot function of the program.
+In order to prevent script kiddies from copying and pasting this and then getting a cutting-edge keylogger, I have taken out the actual keylogger code and any sort of obfuscation, process injection, and basically anything that makes it malicious. I think it is pretty easy to read in-between the lines regarding how to make this silent and how it could be used for abuse. 
 
-Also, it would be possible to create a function using these techniques that cuts off network communication when a keyword like, "Network Monitor," is analayzed. It is also theoretically possible to create a function that moves the file and renames the file when the name of the file is analyzed by the OCR. 
+Another thing I would like to mention is that with the right knowledge, it is possible to create a timer that activates when the "Function Triggered When A Keyword is Detected" is activated; this timer would hypothetically stop the looping/screenshot function of the program for a set amount of time until the "Function Triggered When A Keyword is Detected" function is deactivated when the timer reaches 0. 
+
+Also, it should be theoretically possible to create a function using these techniques that cuts off network communication when a keyword like "Network Monitor" is analyzed. It is also theoretically possible to create a function that moves this program to a new location and renames it when the name of the name of this program is analyzed by the OCR. 
 
 
 
@@ -96,9 +98,7 @@ void ContinuousMonitor(HWND hwnd, const std::vector<std::string>& keywords, int 
 Breakdown:
 This function initiates a continuous monitoring loop, which repeatedly captures the content of the foreground window, processes it with OCR, and checks for keyword matches at regular intervals (500ms by default). It exits if the ESC key is pressed. 
 
-Security Relevance: Real-Time Surveillance: The ability to continuously monitor a window for specific keywords is a hallmark of real-time surveillance tools. In cybersecurity, this could be used to track suspicious activity, monitor communications for sensitive data leaks, or automate alerts when certain terms are mentioned.
-
-Monitoring Application Windows: This technique can be useful in detecting cyberattacks that occur in a windowed environment, such as phishing attempts, unauthorized access, or the use of malicious software.
+Security Relevance: Real-Time Surveillance: The ability to continuously monitor a window for specific keywords is a hallmark of real-time surveillance tools. In cybersecurity, this could be used to track suspicious activity, monitor communications for sensitive data leaks, or automate alerts when certain terms are mentioned. This technique can be useful in detecting cyberattacks that occur in a windowed environment, such as phishing attempts, unauthorized access, or the use of malicious software.
 
 
 
@@ -132,20 +132,14 @@ The main function initializes the program by capturing the current foreground wi
 Security Relevance: User Behavior Monitoring: This functionality could be used to monitor user behavior within applications. It could potentially be repurposed to watch for dangerous commands or interactions within a program (for instance, in banking apps or email clients) that could lead to security breaches.
 
 
-Active Surveillance: The application actively listens for certain keywords, making it well-suited for detecting specific behaviors or instructions that may indicate malicious activity.
-
 
 
 Potential Security Implications
 Malicious Usage: If exploited by an attacker, this code could be used to monitor and capture sensitive information from applications without the user’s knowledge. For example, it could be modified to look for usernames, passwords, or specific system messages.
 
-
-Security Auditing: On the flip side, this technology can be harnessed for positive use cases like monitoring system logs or detecting suspicious behavior in real-time within corporate environments.
-
-
-Privacy Concerns: Continuous screen monitoring can be a privacy concern if misused. If this code were integrated into malware, it could easily turn into a surveillance tool that captures and transmits sensitive data to a remote server.
+Security Relevance: On the flip side, this technology can be harnessed for positive use cases like monitoring system logs or detecting suspicious behavior in real-time within corporate environments.
 
 
 
-Conclusion
-In this blog post, we’ve analyzed how the provided code captures window content, processes it with OCR, and detects specific keywords. While this could be a useful tool for automated monitoring in cybersecurity applications, it also presents risks if misused by malicious actors. Therefore, it’s essential to be mindful of the security implications and ensure that such tools are only deployed in controlled, ethical environments.
+
+Alright, I hope you found this informative. Sorry about not including any malicious code; I do not want to aid in any sort of fraud or something like that. Nonetheless, this is still an interesting technique, and I think the principles behind the technique could be used for something good. 
