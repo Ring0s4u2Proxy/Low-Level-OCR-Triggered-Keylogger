@@ -12,8 +12,6 @@ Something to keep in mind about this program:
 
 -Temporary Data: All data (images, OCR text, keywords) is stored in memory during the execution of the program. Once the program ends, everything is discarded unless explicitly saved to disk.
 
--Security Implication: This in-memory operation could be seen as a security feature, as there is no persistence of sensitive information (like screenshots or OCR results) on disk. However, if malicious actors gain control of the running process, they could still access the in-memory data, which could include sensitive content depending on the keywords being monitored.
-
 -Each screenshot is taken and analyzed in a few milliseconds, so this program is very fast. 
 
 --------------------------------------------------------------------------------
